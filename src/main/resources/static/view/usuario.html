@@ -1,0 +1,29 @@
+<meta charset="UTF-8"/>
+<div class="jumbotron">
+
+<div id="pesquisa">Pesquisar Usuário</div>
+ <input type="text" name="txtPesquisa" onkeyup="$('#grid').show();" autofocus class="form-control" ng-model="criteria" placeholder="Digite o nome do usuário para pesquisar" required />
+
+<div id="grid" style="display:none">
+
+<table class="table table-striped">
+<thead>
+<tr>
+
+	
+	<th>Nome</th>
+
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="user in usuarios | filter:{nome:criteria}">
+
+
+<td>{{user.nome}}</td>
+
+</tr>
+</tbody>
+
+</table>
+</div>
+</div>
