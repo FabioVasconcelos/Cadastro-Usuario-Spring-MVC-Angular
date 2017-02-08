@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+
+<div class="jumbotron">
+
+<form novalidate name="frmUsuario">
+  <div id="alerta"  class="alert alert-success" style="display:none">
+  
+    O usuário(a) {{user.nome}} foi adicionado com <strong>sucesso!</strong> 
+    
+  </div>
+
+<input type="text"class="form-control" ng-model="usuario.nome" name="txtNome" autofocus placeholder="Insira um novo usuário" required/>
+<span ng-show="frmUsuario.txtNome.$error.required && frmUsuario.txtNome.$dirty">Campo Nome Obrigatório</span>
+<input type="button" class="form-control" onclick="exibirMesseger();setTimeout(apagarMesseger, 8000)"  value="Salvar" ng-click="salvarUsuario()" ng-disabled="frmUsuario.$invalid"/>
+
+</form>
+
+</div>
